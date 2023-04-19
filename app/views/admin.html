@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+#{set title:'Admin' /}
+
+#{menu id:"admin"/}
+
+<section class="box">
+  <header class="title">
+    Todo List
+  </header>
+  <ul>
+    #{list items:todolist, as:'todo'}
+    <li class="ui item"> ${todo.title} </li>
+    #{/list}
+  </ul>
+</section>
+
+<form class="box" action="/dashboard/addtodo" method="POST">
+  <div class="field">
+    <label class="label">Title</label>
+    <input class="input is small" placeholder="Title" type="text" name="title">
+  </div>
+  <button class="button is-link is-info">Add Todo</button>
+</form>
